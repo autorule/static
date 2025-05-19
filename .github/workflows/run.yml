@@ -1,0 +1,100 @@
+name: Rule Build
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * *'
+
+jobs:
+  sync-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Add metadata to .list files in Rule/Ruleset and generate Rule/Providers .yaml
+        run: |
+          shopt -s globstar
+
+ 
+          CLASH_SUPPORTED="^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|IP-CIDR|IP-CIDR6|GEOIP|SRC-IP-CIDR|DST-PORT|SRC-PORT|MATCH),"
+
+          for src_file in Rule/Ruleset/**/*.list; do
+            base=$(basename "$src_file" .list)
+            now=$(date '+%Y-%m-%d %H:%M:%S')
+
+
+            content=$(grep -Ev '^\s*#\s*NAME:|^\s*#\s*UPDATED:|^\s*#\s*TOTAL:' "$src_file")
+            total=$(echo "$content" | grep -Ev '^\s*$|^\s*#' | wc -l)
+
+
+            {
+              echo "# NAME: $base"
+              echo "# UPDATED: $now"
+              echo "# TOTAL: $total"
+              echo "$content"
+            } > "$src_file"
+
+            dst_file="Rule/Providers/${src_file#Rule/Ruleset/}"
+            dst_file="${dst_file%.list}.yaml"
+            dst_dir=$(dirname "$dst_file")
+            mkdir -p "$dst_dir"
+
+
+            filtered_content=$(echo "$content" | grep -E "$CLASH_SUPPORTED")
+
+            {
+              echo "# NAME: $base"
+              echo "# UPDATED: $now"
+              echo "# TOTAL: $(echo "$filtered_content" | grep -Ev '^\s*$|^\s*#' | wc -l)"
+              echo "payload:"
+              echo "$filtered_content" | grep -Ev '^\s*$|^\s*#' | awk '{print "  - "$0}'
+            } > "$dst_file"
+          done
+
+      - name: Generate rule-providers.yaml and rules.yaml
+        run: |
+          PROVIDER_DIR="Rule/Providers"
+          OUT_RULE_PROVIDERS="Rule/rule-providers.yaml"
+          OUT_RULES="Rule/rules.yaml"
+          RAW_BASE_URL="https://raw.githubusercontent.com/autorule/static/main/Rule/Providers"
+
+          echo "rule-providers:" > $OUT_RULE_PROVIDERS
+
+          for file in $PROVIDER_DIR/**/*.yaml; do
+            [ -e "$file" ] || continue
+            relpath="ruleset/${file#Rule/Providers/}"
+            url="$RAW_BASE_URL/${file#Rule/Providers/}"
+            name=$(basename "$file" .yaml | tr 'A-Z' 'a-z')
+            {
+              echo "  $name:"
+              echo "    type: http"
+              echo "    behavior: classical"
+              echo "    url: $url"
+              echo "    path: ./$relpath"
+              echo "    interval: 86400"
+            } >> $OUT_RULE_PROVIDERS
+          done
+
+          echo "rules:" > $OUT_RULES
+          for file in $PROVIDER_DIR/**/*.yaml; do
+            [ -e "$file" ] || continue
+            name=$(basename "$file" .yaml | tr 'A-Z' 'a-z')
+            if [[ "$file" == $PROVIDER_DIR/China/* ]]; then
+              echo "  - RULE-SET,$name,DIRECT" >> $OUT_RULES
+            else
+              echo "  - RULE-SET,$name,Proxy" >> $OUT_RULES
+            fi
+          done
+          echo "  - MATCH,Proxy" >> $OUT_RULES
+
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Rule/Ruleset/**/*.list Rule/Providers/**/*.yaml Rule/rule-providers.yaml Rule/rules.yaml
+          git commit -m "Sync metadata, rule-providers and rules" || echo "No changes"
+          git push
