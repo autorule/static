@@ -1,0 +1,8 @@
+# NAME: Instagram
+# UPDATED: 2025-05-19 03:33:32
+# TOTAL: 4
+payload:
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,instagr.am
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-KEYWORD,instagram

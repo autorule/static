@@ -1,0 +1,235 @@
+rule-providers:
+  claude:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Ai/Claude.yaml
+    path: ./ruleset/Ai/Claude.yaml
+    interval: 86400
+  copilot:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Ai/Copilot.yaml
+    path: ./ruleset/Ai/Copilot.yaml
+    interval: 86400
+  cursor:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Ai/Cursor.yaml
+    path: ./ruleset/Ai/Cursor.yaml
+    interval: 86400
+  gemini:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Ai/Gemini.yaml
+    path: ./ruleset/Ai/Gemini.yaml
+    interval: 86400
+  openai:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Ai/OpenAI.yaml
+    path: ./ruleset/Ai/OpenAI.yaml
+    interval: 86400
+  discord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Discord.yaml
+    path: ./ruleset/Chat/Discord.yaml
+    interval: 86400
+  instagram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Instagram.yaml
+    path: ./ruleset/Chat/Instagram.yaml
+    interval: 86400
+  kakaotalk:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/KakaoTalk.yaml
+    path: ./ruleset/Chat/KakaoTalk.yaml
+    interval: 86400
+  line:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Line.yaml
+    path: ./ruleset/Chat/Line.yaml
+    interval: 86400
+  linkedin:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/LinkedIn.yaml
+    path: ./ruleset/Chat/LinkedIn.yaml
+    interval: 86400
+  slack:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Slack.yaml
+    path: ./ruleset/Chat/Slack.yaml
+    interval: 86400
+  teams:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Teams.yaml
+    path: ./ruleset/Chat/Teams.yaml
+    interval: 86400
+  telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Telegram.yaml
+    path: ./ruleset/Chat/Telegram.yaml
+    interval: 86400
+  wechat:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/WeChat.yaml
+    path: ./ruleset/Chat/WeChat.yaml
+    interval: 86400
+  whatsapp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Chat/Whatsapp.yaml
+    path: ./ruleset/Chat/Whatsapp.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/Apple.yaml
+    path: ./ruleset/China/Apple.yaml
+    interval: 86400
+  chinacompanyip:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/ChinaCompanyIp.yaml
+    path: ./ruleset/China/ChinaCompanyIp.yaml
+    interval: 86400
+  chinadomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/ChinaDomain.yaml
+    path: ./ruleset/China/ChinaDomain.yaml
+    interval: 86400
+  download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/Download.yaml
+    path: ./ruleset/China/Download.yaml
+    interval: 86400
+  googlecn:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/GoogleCN.yaml
+    path: ./ruleset/China/GoogleCN.yaml
+    interval: 86400
+  localareanetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/LocalAreaNetwork.yaml
+    path: ./ruleset/China/LocalAreaNetwork.yaml
+    interval: 86400
+  steamcn:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/SteamCN.yaml
+    path: ./ruleset/China/SteamCN.yaml
+    interval: 86400
+  unban:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/China/UnBan.yaml
+    path: ./ruleset/China/UnBan.yaml
+    interval: 86400
+  epic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Game/Epic.yaml
+    path: ./ruleset/Game/Epic.yaml
+    interval: 86400
+  nintendo:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Game/Nintendo.yaml
+    path: ./ruleset/Game/Nintendo.yaml
+    interval: 86400
+  origin:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Game/Origin.yaml
+    path: ./ruleset/Game/Origin.yaml
+    interval: 86400
+  sony:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Game/Sony.yaml
+    path: ./ruleset/Game/Sony.yaml
+    interval: 86400
+  steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Game/Steam.yaml
+    path: ./ruleset/Game/Steam.yaml
+    interval: 86400
+  microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Microsoft/Microsoft.yaml
+    path: ./ruleset/Microsoft/Microsoft.yaml
+    interval: 86400
+  onedrive:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Microsoft/OneDrive.yaml
+    path: ./ruleset/Microsoft/OneDrive.yaml
+    interval: 86400
+  proxygfwlist:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Proxy/ProxyGFWlist.yaml
+    path: ./ruleset/Proxy/ProxyGFWlist.yaml
+    interval: 86400
+  bahamut:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/Bahamut.yaml
+    path: ./ruleset/Video/Bahamut.yaml
+    interval: 86400
+  bilibili:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/Bilibili.yaml
+    path: ./ruleset/Video/Bilibili.yaml
+    interval: 86400
+  bilibilihmt:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/BilibiliHMT.yaml
+    path: ./ruleset/Video/BilibiliHMT.yaml
+    interval: 86400
+  chinamedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/ChinaMedia.yaml
+    path: ./ruleset/Video/ChinaMedia.yaml
+    interval: 86400
+  netflix:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/Netflix.yaml
+    path: ./ruleset/Video/Netflix.yaml
+    interval: 86400
+  proxymedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/ProxyMedia.yaml
+    path: ./ruleset/Video/ProxyMedia.yaml
+    interval: 86400
+  tiktok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/TikTok.yaml
+    path: ./ruleset/Video/TikTok.yaml
+    interval: 86400
+  youtube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/YouTube.yaml
+    path: ./ruleset/Video/YouTube.yaml
+    interval: 86400

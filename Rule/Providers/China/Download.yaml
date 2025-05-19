@@ -1,0 +1,6 @@
+# NAME: Download
+# UPDATED: 2025-05-19 03:33:32
+# TOTAL: 2
+payload:
+  - DOMAIN-SUFFIX,smtp
+  - DOMAIN-KEYWORD,aria2
