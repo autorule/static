@@ -1,7 +1,0 @@
-# NAME: Cursor
-# UPDATED: 2025-05-26 21:29:42
-# TOTAL: 3
-payload:
-  - DOMAIN-KEYWORD,cursor
-  - DOMAIN-SUFFIX,cursor.com
-  - DOMAIN-SUFFIX,cursor.sh
