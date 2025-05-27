@@ -215,12 +215,6 @@ rule-providers:
     url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/Netflix.yaml
     path: ./ruleset/Video/Netflix.yaml
     interval: 86400
-  proxymedia:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/autorule/static/main/Rule/Providers/Video/ProxyMedia.yaml
-    path: ./ruleset/Video/ProxyMedia.yaml
-    interval: 86400
   tiktok:
     type: http
     behavior: classical

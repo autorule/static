@@ -35,7 +35,6 @@ rules:
   - RULE-SET,bilibilihmt,Proxy
   - RULE-SET,chinamedia,Proxy
   - RULE-SET,netflix,Proxy
-  - RULE-SET,proxymedia,Proxy
   - RULE-SET,tiktok,Proxy
   - RULE-SET,youtube,Proxy
   - MATCH,Proxy
