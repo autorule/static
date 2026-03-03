@@ -1,5 +1,5 @@
 # NAME: ChinaCompanyIp
-# UPDATED: 2026-03-02 21:30:09
+# UPDATED: 2026-03-03 21:30:44
 # TOTAL: 208
 payload:
   - IP-CIDR,8.128.0.0/10,no-resolve
