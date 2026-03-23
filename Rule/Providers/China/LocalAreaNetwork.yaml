@@ -1,5 +1,5 @@
 # NAME: LocalAreaNetwork
-# UPDATED: 2026-03-22 21:23:29
+# UPDATED: 2026-03-23 21:33:34
 # TOTAL: 34
 payload:
   - DOMAIN-SUFFIX,ip6-localhost
