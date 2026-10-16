@@ -1,5 +1,5 @@
 # NAME: ProxyGFWlist
-# UPDATED: 2026-10-15 23:31:44
+# UPDATED: 2026-10-16 23:13:35
 # TOTAL: 6898
 payload:
   - DOMAIN-SUFFIX,1password.com
